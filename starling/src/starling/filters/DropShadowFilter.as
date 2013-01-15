@@ -36,7 +36,7 @@ package starling.filters {
 			
 			_color = color;
 			_alpha = alpha;
-			setUniformColor(true, color, alpha);
+			setUniformColor(true, _color, _alpha);
 		}
 
 		private function setOffset():void {
@@ -59,7 +59,7 @@ package starling.filters {
 		public function set alpha(value: Number):void {
 			if (_alpha !== value) {
 				_alpha = value;
-				setUniformColor(true, color, alpha);
+				setUniformColor(true, _color, _alpha);
 			}
 		}
 
@@ -78,7 +78,7 @@ package starling.filters {
 		public function set color(value: uint):void {
 			if (_color !== value) {
 				_color = value;
-				setUniformColor(true, color, alpha);
+				setUniformColor(true, _color, _alpha);
 			}
 		}
 
