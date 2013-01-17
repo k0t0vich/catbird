@@ -1,11 +1,11 @@
 package scenes
 {
-    import starling.display.Button;
-    import starling.display.Image;
-    import starling.events.Event;
-    import starling.filters.BlurFilter;
-    import starling.filters.ColorMatrixFilter;
-    import starling.text.TextField;
+    import org.catbird.display.Button;
+    import org.catbird.display.Image;
+    import org.catbird.events.Event;
+    import org.catbird.filters.BlurFilter;
+    import org.catbird.filters.ColorMatrixFilter;
+    import org.catbird.text.TextField;
 
     public class FilterScene extends Scene
     {
@@ -24,7 +24,7 @@ package scenes
             mButton.addEventListener(Event.TRIGGERED, onButtonTriggered);
             addChild(mButton);
             
-            mImage = new Image(Game.assets.getTexture("starling_rocket"));
+            mImage = new Image(Game.assets.getTexture("org.catbird_rocket"));
             mImage.x = int(Constants.CenterX - mImage.width / 2);
             mImage.y = 170;
             addChild(mImage);

@@ -1,10 +1,10 @@
 package scenes
 {
-    import starling.text.BitmapFont;
-    import starling.text.TextField;
-    import starling.utils.Color;
-    import starling.utils.HAlign;
-    import starling.utils.VAlign;
+    import org.catbird.text.BitmapFont;
+    import org.catbird.text.TextField;
+    import org.catbird.utils.Color;
+    import org.catbird.utils.HAlign;
+    import org.catbird.utils.VAlign;
 
     public class TextScene extends Scene
     {

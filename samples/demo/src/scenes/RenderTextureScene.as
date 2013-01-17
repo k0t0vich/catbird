@@ -3,15 +3,15 @@ package scenes
     import flash.geom.Point;
     import flash.utils.Dictionary;
     
-    import starling.display.BlendMode;
-    import starling.display.Button;
-    import starling.display.Image;
-    import starling.events.Event;
-    import starling.events.Touch;
-    import starling.events.TouchEvent;
-    import starling.events.TouchPhase;
-    import starling.text.TextField;
-    import starling.textures.RenderTexture;
+    import org.catbird.display.BlendMode;
+    import org.catbird.display.Button;
+    import org.catbird.display.Image;
+    import org.catbird.events.Event;
+    import org.catbird.events.Touch;
+    import org.catbird.events.TouchEvent;
+    import org.catbird.events.TouchPhase;
+    import org.catbird.text.TextField;
+    import org.catbird.textures.RenderTexture;
 
     public class RenderTextureScene extends Scene
     {

@@ -13,15 +13,15 @@ package
     import scenes.TextureScene;
     import scenes.TouchScene;
     
-    import starling.core.Starling;
-    import starling.display.Button;
-    import starling.display.Image;
-    import starling.display.Sprite;
-    import starling.events.TouchEvent;
-    import starling.events.TouchPhase;
-    import starling.text.TextField;
-    import starling.textures.Texture;
-    import starling.utils.VAlign;
+    import org.catbird.core.Catbird;
+    import org.catbird.display.Button;
+    import org.catbird.display.Image;
+    import org.catbird.display.Sprite;
+    import org.catbird.events.TouchEvent;
+    import org.catbird.events.TouchPhase;
+    import org.catbird.text.TextField;
+    import org.catbird.textures.Texture;
+    import org.catbird.utils.VAlign;
 
     public class MainMenu extends Sprite
     {
@@ -66,7 +66,7 @@ package
             
             // show information about rendering method (hardware/software)
             
-            var driverInfo:String = Starling.context.driverInfo;
+            var driverInfo:String = Catbird.context.driverInfo;
             var infoText:TextField = new TextField(310, 64, driverInfo, "Verdana", 10);
             infoText.x = 5;
             infoText.y = 475 - infoText.height;
@@ -78,7 +78,7 @@ package
         private function onInfoTextTouched(event:TouchEvent):void
         {
             if (event.getTouch(this, TouchPhase.ENDED))
-                Starling.current.showStats = !Starling.current.showStats;
+                Catbird.current.showStats = !Catbird.current.showStats;
         }
     }
 }

@@ -1,11 +1,11 @@
 package
 {
-    import starling.core.Starling;
-    import starling.display.Image;
-    import starling.display.Sprite;
-    import starling.events.Event;
-    import starling.textures.Texture;
-    import starling.utils.AssetManager;
+    import org.catbird.core.Catbird;
+    import org.catbird.display.Image;
+    import org.catbird.display.Sprite;
+    import org.catbird.events.Event;
+    import org.catbird.textures.Texture;
+    import org.catbird.utils.AssetManager;
     
     import utils.ProgressBar;
 
@@ -59,7 +59,7 @@ package
                 // so we show the main menu only after a short delay. 
                 
                 if (ratio == 1)
-                    Starling.juggler.delayCall(function():void
+                    Catbird.juggler.delayCall(function():void
                     {
                         progressBar.removeFromParent(true);
                         showScene(Menu);

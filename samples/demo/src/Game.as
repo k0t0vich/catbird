@@ -5,14 +5,14 @@ package
     
     import scenes.Scene;
     
-    import starling.core.Starling;
-    import starling.display.Button;
-    import starling.display.Image;
-    import starling.display.Sprite;
-    import starling.events.Event;
-    import starling.events.KeyboardEvent;
-    import starling.textures.Texture;
-    import starling.utils.AssetManager;
+    import org.catbird.core.Catbird;
+    import org.catbird.display.Button;
+    import org.catbird.display.Image;
+    import org.catbird.display.Sprite;
+    import org.catbird.events.Event;
+    import org.catbird.events.KeyboardEvent;
+    import org.catbird.textures.Texture;
+    import org.catbird.utils.AssetManager;
     
     import utils.ProgressBar;
 
@@ -62,7 +62,7 @@ package
                 // so we show the main menu only after a short delay. 
                 
                 if (ratio == 1)
-                    Starling.juggler.delayCall(function():void
+                    Catbird.juggler.delayCall(function():void
                     {
                         mLoadingProgress.removeFromParent(true);
                         mLoadingProgress = null;
@@ -85,9 +85,9 @@ package
         private function onKey(event:KeyboardEvent):void
         {
             if (event.keyCode == Keyboard.SPACE)
-                Starling.current.showStats = !Starling.current.showStats;
+                Catbird.current.showStats = !Catbird.current.showStats;
             else if (event.keyCode == Keyboard.X)
-                Starling.context.dispose();
+                Catbird.context.dispose();
         }
         
         private function onButtonTriggered(event:Event):void

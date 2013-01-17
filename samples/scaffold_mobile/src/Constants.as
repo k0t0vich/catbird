@@ -1,6 +1,6 @@
 package
 {
-    import starling.errors.AbstractClassError;
+    import org.catbird.errors.AbstractClassError;
 
     public class Constants
     {

@@ -1,8 +1,8 @@
 package scenes
 {
-    import starling.text.TextField;
-    import starling.utils.HAlign;
-    import starling.utils.VAlign;
+    import org.catbird.text.TextField;
+    import org.catbird.utils.HAlign;
+    import org.catbird.utils.VAlign;
     
     import utils.RoundButton;
 
@@ -20,10 +20,10 @@ package scenes
             infoText.hAlign = HAlign.CENTER;
             addChild(infoText);
             
-            // 'RoundButton' is a helper class of the Demo, not a part of Starling!
+            // 'RoundButton' is a helper class of the Demo, not a part of Catbird!
             // Have a look at its code to understand this sample.
             
-            var button:RoundButton = new RoundButton(Game.assets.getTexture("starling_round"));
+            var button:RoundButton = new RoundButton(Game.assets.getTexture("org.catbird_round"));
             button.x = Constants.CenterX - int(button.width / 2);
             button.y = 150;
             addChild(button);

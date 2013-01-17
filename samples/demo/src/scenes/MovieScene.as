@@ -2,10 +2,10 @@ package scenes
 {
     import flash.media.Sound;
     
-    import starling.core.Starling;
-    import starling.display.MovieClip;
-    import starling.events.Event;
-    import starling.textures.Texture;
+    import org.catbird.core.Catbird;
+    import org.catbird.display.MovieClip;
+    import org.catbird.events.Event;
+    import org.catbird.textures.Texture;
 
     public class MovieScene extends Scene
     {
@@ -33,12 +33,12 @@ package scenes
         
         private function onAddedToStage():void
         {
-            Starling.juggler.add(mMovie);
+            Catbird.juggler.add(mMovie);
         }
         
         private function onRemovedFromStage():void
         {
-            Starling.juggler.remove(mMovie);
+            Catbird.juggler.remove(mMovie);
         }
         
         public override function dispose():void

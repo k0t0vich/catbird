@@ -8,7 +8,7 @@ package
 	import flash.events.Event;
 	import flash.utils.getDefinitionByName;
 	
-	import starling.utils.Color;
+	import org.catbird.utils.Color;
 	
     // To show a Preloader while the SWF is being transferred from the server, 
     // set this class as your 'default application' and add the following 

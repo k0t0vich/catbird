@@ -2,14 +2,14 @@ package scenes
 {
     import flash.system.System;
     
-    import starling.core.Starling;
-    import starling.display.Button;
-    import starling.display.Image;
-    import starling.display.Sprite;
-    import starling.events.EnterFrameEvent;
-    import starling.events.Event;
-    import starling.text.TextField;
-    import starling.utils.formatString;
+    import org.catbird.core.Catbird;
+    import org.catbird.display.Button;
+    import org.catbird.display.Image;
+    import org.catbird.display.Sprite;
+    import org.catbird.events.EnterFrameEvent;
+    import org.catbird.events.Event;
+    import org.catbird.text.TextField;
+    import org.catbird.utils.formatString;
 
     public class BenchmarkScene extends Scene
     {
@@ -62,7 +62,7 @@ package scenes
             if (mFrameCount % mWaitFrames == 0)
             {
                 var fps:Number = mWaitFrames / mElapsed;
-                var targetFps:int = Starling.current.nativeStage.frameRate;
+                var targetFps:int = Catbird.current.nativeStage.frameRate;
                 
                 if (Math.ceil(fps) >= targetFps)
                 {
@@ -129,7 +129,7 @@ package scenes
             mStarted = false;
             mStartButton.visible = true;
             
-            var fps:int = Starling.current.nativeStage.frameRate;
+            var fps:int = Catbird.current.nativeStage.frameRate;
             
             trace("Benchmark complete!");
             trace("FPS: " + fps);

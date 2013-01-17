@@ -1,8 +1,8 @@
 package scenes
 {
-    import starling.display.Image;
-    import starling.text.TextField;
-    import starling.textures.Texture;
+    import org.catbird.display.Image;
+    import org.catbird.text.TextField;
+    import org.catbird.textures.Texture;
 
     public class TextureScene extends Scene
     {

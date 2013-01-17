@@ -3,11 +3,11 @@ package utils
     import flash.display.BitmapData;
     import flash.display.Shape;
     
-    import starling.core.Starling;
-    import starling.display.Image;
-    import starling.display.Quad;
-    import starling.display.Sprite;
-    import starling.textures.Texture;
+    import org.catbird.core.Catbird;
+    import org.catbird.display.Image;
+    import org.catbird.display.Quad;
+    import org.catbird.display.Sprite;
+    import org.catbird.textures.Texture;
 
     public class ProgressBar extends Sprite
     {
@@ -21,7 +21,7 @@ package utils
         
         private function init(width:int, height:int):void
         {
-            var scale:Number = Starling.contentScaleFactor;
+            var scale:Number = Catbird.contentScaleFactor;
             var padding:Number = height * 0.2;
             var cornerRadius:Number = padding * scale * 2;
             

@@ -8,13 +8,13 @@ package
     import flash.geom.Rectangle;
     import flash.system.Capabilities;
     
-    import starling.core.Starling;
-    import starling.events.Event;
-    import starling.textures.Texture;
-    import starling.utils.AssetManager;
-    import starling.utils.RectangleUtil;
-    import starling.utils.ScaleMode;
-    import starling.utils.formatString;
+    import org.catbird.core.Catbird;
+    import org.catbird.events.Event;
+    import org.catbird.textures.Texture;
+    import org.catbird.utils.AssetManager;
+    import org.catbird.utils.RectangleUtil;
+    import org.catbird.utils.ScaleMode;
+    import org.catbird.utils.formatString;
     
     [SWF(width="320", height="480", frameRate="30", backgroundColor="#000000")]
     public class Demo_Mobile extends Sprite
@@ -27,7 +27,7 @@ package
         [Embed(source="../../demo/system/startupHD.jpg")]
         private static var BackgroundHD:Class;
         
-        private var mStarling:Starling;
+        private var mCatbird:Catbird;
         
         public function Demo_Mobile()
         {
@@ -42,8 +42,8 @@ package
             var stageHeight:int = 480;
             var iOS:Boolean = Capabilities.manufacturer.indexOf("iOS") != -1;
             
-            Starling.multitouchEnabled = true;  // useful on mobile devices
-            Starling.handleLostContext = !iOS;  // not necessary on iOS. Saves a lot of memory!
+            Catbird.multitouchEnabled = true;  // useful on mobile devices
+            Catbird.handleLostContext = !iOS;  // not necessary on iOS. Saves a lot of memory!
             
             // create a suitable viewport for the screen size
             // 
@@ -70,7 +70,7 @@ package
             );
             
             // While Stage3D is initializing, the screen will be blank. To avoid any flickering, 
-            // we display a startup image now and remove it below, when Starling is ready to go.
+            // we display a startup image now and remove it below, when Catbird is ready to go.
             // This is especially useful on iOS, where "Default.png" (or a variant) is displayed
             // during Startup. You can create an absolute seamless startup that way.
             // 
@@ -90,33 +90,33 @@ package
             background.smoothing = true;
             addChild(background);
             
-            // launch Starling
+            // launch Catbird
             
-            mStarling = new Starling(Game, stage, viewPort);
-            mStarling.stage.stageWidth  = stageWidth;  // <- same size on all devices!
-            mStarling.stage.stageHeight = stageHeight; // <- same size on all devices!
-            mStarling.simulateMultitouch  = false;
-            mStarling.enableErrorChecking = false;
+            mCatbird = new Catbird(Game, stage, viewPort);
+            mCatbird.stage.stageWidth  = stageWidth;  // <- same size on all devices!
+            mCatbird.stage.stageHeight = stageHeight; // <- same size on all devices!
+            mCatbird.simulateMultitouch  = false;
+            mCatbird.enableErrorChecking = false;
 
-            mStarling.addEventListener(starling.events.Event.ROOT_CREATED, function():void
+            mCatbird.addEventListener(org.catbird.events.Event.ROOT_CREATED, function():void
             {
                 removeChild(background);
                 
-                var game:Game = mStarling.root as Game;
+                var game:Game = mCatbird.root as Game;
                 var bgTexture:Texture = Texture.fromBitmap(background, false, false, scaleFactor);
                 
                 game.start(bgTexture, assets);
-                mStarling.start();
+                mCatbird.start();
             });
             
-            // When the game becomes inactive, we pause Starling; otherwise, the enter frame event
+            // When the game becomes inactive, we pause Catbird; otherwise, the enter frame event
             // would report a very long 'passedTime' when the app is reactivated. 
             
             NativeApplication.nativeApplication.addEventListener(
-                flash.events.Event.ACTIVATE, function (e:*):void { mStarling.start(); });
+                flash.events.Event.ACTIVATE, function (e:*):void { mCatbird.start(); });
             
             NativeApplication.nativeApplication.addEventListener(
-                flash.events.Event.DEACTIVATE, function (e:*):void { mStarling.stop(); });
+                flash.events.Event.DEACTIVATE, function (e:*):void { mCatbird.stop(); });
         }
         
     }

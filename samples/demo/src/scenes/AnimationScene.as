@@ -1,15 +1,15 @@
 package scenes
 {
-    import starling.animation.Transitions;
-    import starling.animation.Tween;
-    import starling.core.Starling;
-    import starling.display.Button;
-    import starling.display.Image;
-    import starling.events.Event;
-    import starling.text.TextField;
-    import starling.textures.Texture;
-    import starling.utils.Color;
-    import starling.utils.deg2rad;
+    import org.catbird.animation.Transitions;
+    import org.catbird.animation.Tween;
+    import org.catbird.core.Catbird;
+    import org.catbird.display.Button;
+    import org.catbird.display.Image;
+    import org.catbird.events.Event;
+    import org.catbird.text.TextField;
+    import org.catbird.textures.Texture;
+    import org.catbird.utils.Color;
+    import org.catbird.utils.deg2rad;
 
     public class AnimationScene extends Scene
     {
@@ -41,8 +41,8 @@ package scenes
             mDelayButton.y = mStartButton.y + 40;
             addChild(mDelayButton);
             
-            // the Starling will be tweened
-            mEgg = new Image(Game.assets.getTexture("starling_front"));
+            // the Catbird will be tweened
+            mEgg = new Image(Game.assets.getTexture("org.catbird_front"));
             addChild(mEgg);
             resetEgg();
             
@@ -86,7 +86,7 @@ package scenes
             // This is done by the 'Juggler'. It receives the tween and will carry it out.
             // We use the default juggler here, but you can create your own jugglers, as well.            
             // That way, you can group animations into logical parts.  
-            Starling.juggler.add(tween);
+            Catbird.juggler.add(tween);
             
             // show which tweening function is used
             mTransitionLabel.text = transition;
@@ -94,7 +94,7 @@ package scenes
             
             var hideTween:Tween = new Tween(mTransitionLabel, 2.0, Transitions.EASE_IN);
             hideTween.animate("alpha", 0.0);
-            Starling.juggler.add(hideTween);
+            Catbird.juggler.add(hideTween);
         }
         
         private function onDelayButtonTriggered():void
@@ -105,9 +105,9 @@ package scenes
             // you use your own juggler in a component of your game, because it gives you perfect 
             // control over the flow of time and animations. 
             
-            Starling.juggler.delayCall(colorizeEgg, 1.0, true);
-            Starling.juggler.delayCall(colorizeEgg, 2.0, false);
-            Starling.juggler.delayCall(function():void { mDelayButton.enabled = true; }, 2.0);
+            Catbird.juggler.delayCall(colorizeEgg, 1.0, true);
+            Catbird.juggler.delayCall(colorizeEgg, 2.0, false);
+            Catbird.juggler.delayCall(function():void { mDelayButton.enabled = true; }, 2.0);
         }
         
         private function colorizeEgg(colorize:Boolean):void

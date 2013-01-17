@@ -3,10 +3,10 @@ package
     import flash.display.Sprite;
     import flash.system.Capabilities;
     
-    import starling.core.Starling;
-    import starling.events.Event;
-    import starling.textures.Texture;
-    import starling.utils.AssetManager;
+    import org.catbird.core.Catbird;
+    import org.catbird.events.Event;
+    import org.catbird.textures.Texture;
+    import org.catbird.utils.AssetManager;
     
     // If you set this class as your 'default application', it will run without a preloader.
     // To use a preloader, see 'Demo_Web_Preloader.as'.
@@ -17,7 +17,7 @@ package
         [Embed(source = "/startup.jpg")]
         private var Background:Class;
         
-        private var mStarling:Starling;
+        private var mCatbird:Catbird;
         
         public function Demo_Web()
         {
@@ -27,16 +27,16 @@ package
         
         private function start():void
         {
-            Starling.multitouchEnabled = true; // for Multitouch Scene
-            Starling.handleLostContext = true; // required on Windows, needs more memory
+            Catbird.multitouchEnabled = true; // for Multitouch Scene
+            Catbird.handleLostContext = true; // required on Windows, needs more memory
             
-            mStarling = new Starling(Game, stage);
-            mStarling.simulateMultitouch = true;
-            mStarling.enableErrorChecking = Capabilities.isDebugger;
-            mStarling.start();
+            mCatbird = new Catbird(Game, stage);
+            mCatbird.simulateMultitouch = true;
+            mCatbird.enableErrorChecking = Capabilities.isDebugger;
+            mCatbird.start();
             
             // this event is dispatched when stage3D is set up
-            mStarling.addEventListener(Event.ROOT_CREATED, onRootCreated);
+            mCatbird.addEventListener(Event.ROOT_CREATED, onRootCreated);
         }
         
         private function onAddedToStage(event:Object):void
@@ -48,8 +48,8 @@ package
         private function onRootCreated(event:Event, game:Game):void
         {
             // set framerate to 30 in software mode
-            if (mStarling.context.driverInfo.toLowerCase().indexOf("software") != -1)
-                mStarling.nativeStage.frameRate = 30;
+            if (mCatbird.context.driverInfo.toLowerCase().indexOf("software") != -1)
+                mCatbird.nativeStage.frameRate = 30;
             
             // define which resources to load
             var assets:AssetManager = new AssetManager();
